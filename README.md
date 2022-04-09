@@ -48,11 +48,11 @@ Here's a sample of the `config.json` file:
 
 ```json
 {
-  "bioUrl": "https://raw.githubusercontent.com/m4tt72/m4tt72/master/README.md",
+  "bioUrl": "https://raw.githubusercontent.com/ibphantom/ibphantom/master/README.md",
   "social": {
     "instagram": "m4tt72",
-    "github": "m4tt72",
-    "linkedin": "yassinefathi"
+    "github": "ibphantom",
+    "linkedin": "ZacharyRKoch"
   },
   "colors": {
     "light": {
