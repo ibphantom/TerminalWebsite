@@ -20,7 +20,7 @@ export const date = async (args: string[]): Promise<string> => {
 };
 
 export const gui = async (args: string[]): Promise<string> => {
-  window.open('https://gui.zachk.dev', '_self');
+  window.open('https://gui.zachk.dev', '_blank');
 
   return 'Opening GUI version...';
 };
