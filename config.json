@@ -10,19 +10,21 @@
       "background": "#39FF14",
       "foreground": "#0A0B0B",
       "yellow": "#D79921",
-      "green": "#98971A",
+      "green": "#39FF14",
       "gray": "#7C6F64",
       "blue": "#458588",
-      "red": "#CA2124"
+      "red": "#CA2124",
+      "purple": "#980bd9"
     },
     "dark": {
       "background": "#0A0B0B",
       "foreground": "#39FF14",
       "yellow": "#D79921",
-      "green": "#98971A",
+      "green": "#39FF14",
       "gray": "#A89984",
       "blue": "#458588",
-      "red": "#CA2124"
+      "red": "#CA2124",
+      "purple": "#980bd9"
     }
   }
 }
