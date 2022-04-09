@@ -91,8 +91,8 @@ class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <meta name="msapplication-TileColor" content="#262626" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-          <meta name="theme-color" content="#D79921" />
-          <meta name="description" content="M4TT72 | Yassine Fathi" />
+          <meta name="theme-color" content="#39FF14" />
+          <meta name="description" content="ZACHK.DEV | Zach Koch" />
         </Head>
 
         <body>
