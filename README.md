@@ -1,14 +1,8 @@
-# [M4TT72 | Terminal](https://term.m4tt72.com)
+# [ZACHK.DEV | Terminal](ZACHK.DEV)
 
-A terminal style website
+A terminal style website - Ported from https://term.m4tt72.com/
 
 ![screenshot](/docs/screenshot.png)
-
-## why?
-
-TL;DR: why not?
-
-I'm a Linux enthusiast, and I tried creating something that will allow 'normal' people to have a glimpse at my world.
 
 ## Quick Start
 
@@ -25,7 +19,7 @@ docker run -d \
   --name terminal \
   -p 3000:3000 \
   -v `pwd`/config.json:/data/config.json \
-  m4tt72/terminal
+  ibphantom/terminalwebsite
 ```
 
 ### Using npm/yarn
