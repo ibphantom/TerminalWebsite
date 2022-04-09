@@ -9,7 +9,7 @@ A terminal style website - Ported from https://term.m4tt72.com/
 ### Using docker (recommended)
 
 ```bash
-docker run -d --name terminal -p 3000:3000 m4tt72/terminal
+docker run -d --name terminal -p 3000:3000 ibphantom/terminalwebsite
 ```
 
 If you want to run with custom configuration, make sure you have a copy of `config.json` then mount in the container:
