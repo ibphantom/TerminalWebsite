@@ -20,7 +20,7 @@ export const date = async (args: string[]): Promise<string> => {
 };
 
 export const gui = async (args: string[]): Promise<string> => {
-  window.open('https://zachk.dev', '_self');
+  window.open('https://gui.zachk.dev', '_self');
 
   return 'Opening GUI version...';
 };
@@ -28,7 +28,7 @@ export const gui = async (args: string[]): Promise<string> => {
 export const email = async (args: string[]): Promise<string> => {
   window.open('mailto:admin@zachk.dev');
 
-  return 'Opening mailto:admin@zachk.dev...';
+  return 'Opening Your EMail Client...';
 };
 
 export const vi = async (args: string[]): Promise<string> => {
@@ -67,7 +67,7 @@ v${packageJson.version}
 Type 'help' to see list of available commands.
 
 --
-Now the project is open-source 🎉 type 'repo' to check out the repository.
+This project is open-source 🎉 type 'repo' to check out the repository.
 --
 `;
 };
