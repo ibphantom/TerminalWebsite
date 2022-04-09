@@ -7,8 +7,8 @@
   },
   "colors": {
     "light": {
-      "background": "#FBF1C9",
-      "foreground": "#3C3836",
+      "background": "#39FF14",
+      "foreground": "#0A0B0B",
       "yellow": "#D79921",
       "green": "#98971A",
       "gray": "#7C6F64",
@@ -16,8 +16,8 @@
       "red": "#CA2124"
     },
     "dark": {
-      "background": "#1c1c1c",
-      "foreground": "#EBDBB2",
+      "background": "#0A0B0B",
+      "foreground": "#39FF14",
       "yellow": "#D79921",
       "green": "#98971A",
       "gray": "#A89984",
