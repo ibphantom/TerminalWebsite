@@ -3,12 +3,12 @@ import React from 'react';
 export const Ps1 = () => {
   return (
     <div>
-      <span className="text-light-yellow dark:text-dark-yellow">guest</span>
+      <span className="text-light-purple dark:text-dark-purple">guest</span>
       <span className="text-light-gray dark:text-dark-gray">@</span>
-      <span className="text-light-green dark:text-dark-green">
+      <span className="text-light-blue dark:text-dark-blue">
         zachk.dev
       </span>
-      <span className="text-light-gray dark:text-dark-gray">:$ ~ </span>
+      <span className="text-light-red dark:text-dark-red">:$ ~ </span>
     </div>
   );
 };
