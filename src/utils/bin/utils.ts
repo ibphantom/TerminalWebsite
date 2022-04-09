@@ -12,7 +12,8 @@ export const echo = async (args: string[]): Promise<string> => {
 };
 
 export const whoami = async (args: string[]): Promise<string> => {
-  return 'guest';
+  return 'Yeah... Who are you..?';
+  return 'Guessing..' <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 };
 
 export const date = async (args: string[]): Promise<string> => {
@@ -20,7 +21,7 @@ export const date = async (args: string[]): Promise<string> => {
 };
 
 export const gui = async (args: string[]): Promise<string> => {
-  window.open('https://m4tt72.com', '_self');
+  window.open('https://zachk.dev', '_self');
 
   return 'Opening GUI version...';
 };
@@ -28,7 +29,7 @@ export const gui = async (args: string[]): Promise<string> => {
 export const email = async (args: string[]): Promise<string> => {
   window.open('mailto:hi@nm4tt72.com');
 
-  return 'Opening mailto:hi@m4tt72.com...';
+  return 'Opening mailto:admin@zachk.dev...';
 };
 
 export const vi = async (args: string[]): Promise<string> => {
@@ -50,7 +51,7 @@ export const sudo = async (args?: string[]): Promise<string> => {
 };
 
 export const repo = async (args?: string[]): Promise<string> => {
-  window.open('https://github.com/m4tt72/terminal', '_blank');
+  window.open('https://github.com/ibphantom/terminalwebsite', '_blank');
 
   return 'Opening repository...';
 };
