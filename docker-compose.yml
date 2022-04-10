@@ -8,7 +8,7 @@ networks:
 services:
   terminal:
     build: .
-    container_name: terminal
+    container_name: TerminalWebsite
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
