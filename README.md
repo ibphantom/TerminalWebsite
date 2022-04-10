@@ -1,4 +1,4 @@
-# [ZACHK.DEV | Terminal](ZACHK.DEV)
+# [ZACHK.DEV | Terminal](https://terminal.zachk.dev)
 
 A terminal style website - Ported from https://term.m4tt72.com/
 
