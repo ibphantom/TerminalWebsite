@@ -16,8 +16,6 @@ interface IndexPageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ version, quote, inputRef }) => {
-  const { trackPageView } = useMatomo();
-
   const containerRef = React.useRef(null);
   const {
     history,
@@ -48,7 +46,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ version, quote, inputRef }) => {
   return (
     <>
       <Head>
-        <title>ZACHK.DEV | Home</title>
+        <title>ZACHK.DEV | Terminal</title>
       </Head>
 
       <div className="p-8 overflow-hidden h-full border-2 rounded border-light-green dark:border-dark-green">
