@@ -16,6 +16,8 @@ interface IndexPageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ version, quote, inputRef }) => {
+  const { trackPageView } = useMatomo();
+  
   const containerRef = React.useRef(null);
   const {
     history,
