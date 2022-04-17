@@ -28,7 +28,7 @@ export const gui = async (args: string[]): Promise<string> => {
 export const email = async (args: string[]): Promise<string> => {
   window.open('mailto:admin@zachk.dev');
 
-  return 'Opening Your EMail Client...';
+  return 'Opening Your Email Client...';
 };
 
 export const nano = async (args: string[]): Promise<string> => {
@@ -46,7 +46,7 @@ export const emacs = async (args?: string[]): Promise<string> => {
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
 
-  return `Permission denied: unable to run the command '${args[0]}' as root.`;
+  return `Permission Denied: Unable to run the command '${#args[@]}' as root.`;
 };
 
 export const repo = async (args?: string[]): Promise<string> => {
