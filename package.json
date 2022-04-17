@@ -1,11 +1,11 @@
 {
   "name": "terminal",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "license": "MIT",
   "author": {
-    "name": "Yassine Fathi",
-    "url": "https://m4tt72.com",
-    "email": "hi@m4tt72.com"
+    "name": "Zach Koch",
+    "url": "https://zachk.dev",
+    "email": "admin@zachk.dev"
   },
   "scripts": {
     "start": "next start",
