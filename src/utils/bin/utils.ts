@@ -31,8 +31,8 @@ export const email = async (args: string[]): Promise<string> => {
   return 'Opening Your EMail Client...';
 };
 
-export const vi = async (args: string[]): Promise<string> => {
-  return `why use vi? try 'emacs'.`;
+export const nano = async (args: string[]): Promise<string> => {
+  return `why use nano? try 'vim'.`;
 };
 
 export const vim = async (args: string[]): Promise<string> => {
@@ -40,7 +40,7 @@ export const vim = async (args: string[]): Promise<string> => {
 };
 
 export const emacs = async (args?: string[]): Promise<string> => {
-  return `really? emacs? you should be using 'vim'`;
+  return `really? emacs? you should be using 'nano'`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
