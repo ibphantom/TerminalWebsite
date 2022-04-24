@@ -56,11 +56,41 @@ export const repo = async (args?: string[]): Promise<string> => {
 };
 
 export const boot = async (args?: string[]): Promise<string> => {
-  return `Attempting to boot..
+  return `
+  Attempting to boot..
   Compiling Kernel from encrypted source....
   Concatenating drive paths to home server....
   
   Welcome Agent.
+  
+  55 53 43 59 42 45 52 43 4F 4D
+ 
+  55 SC 59 42 45 52 43 4F 4D 20
+
+  55 SC 59 42 E 52 43 4F 4D
+
+  55 SC 59 42 E 52 43 4F 4D
+
+  55 SC 59 42 E 52 COM
+
+  55 SC59 42 E 52COM
+
+  55 SC59 42 ERCOM
+ 
+  USC59 B ERCOM
+
+  USCY B ERCOM
+
+  USCYBERCOM
+  
+╔╗─╔╗╔═══╗╔═══╗╔╗──╔╗╔══╗─╔═══╗╔═══╗╔═══╗╔═══╗╔═╗╔═╗
+║║─║║║╔═╗║║╔═╗║║╚╗╔╝║║╔╗║─║╔══╝║╔═╗║║╔═╗║║╔═╗║║║╚╝║║
+║║─║║║╚══╗║║─╚╝╚╗╚╝╔╝║╚╝╚╗║╚══╗║╚═╝║║║─╚╝║║─║║║╔╗╔╗║
+║║─║║╚══╗║║║─╔╗─╚╗╔╝─║╔═╗║║╔══╝║╔╗╔╝║║─╔╗║║─║║║║║║║║
+║╚═╝║║╚═╝║║╚═╝║──║║──║╚═╝║║╚══╗║║║╚╗║╚═╝║║╚═╝║║║║║║║
+╚═══╝╚═══╝╚═══╝──╚╝──╚═══╝╚═══╝╚╝╚═╝╚═══╝╚═══╝╚╝╚╝╚╝
+  
+  
   `;
 };
 
