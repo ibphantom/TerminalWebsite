@@ -55,8 +55,7 @@ export const repo = async (args?: string[]): Promise<string> => {
   return 'Opening repository...';
 };
 
-export const boot = async (args: string[]): Promise<string> => {
-  clear
+export const boot = async (args?: string[]): Promise<string> => {
   return `Attempting to boot..
   Compiling Kernel from encrypted source....
   Concatenating drive paths to home server....
