@@ -55,6 +55,16 @@ export const repo = async (args?: string[]): Promise<string> => {
   return 'Opening repository...';
 };
 
+export const boot = async (args: string[]): Promise<string> => {
+  clear
+  return `Attempting to boot..
+  Compiling Kernel from encrypted source....
+  Concatenating drive paths to home server....
+  
+  Welcome Agent.
+  `;
+};
+
 export const banner = (args?: string[]): string => {
   return `
 ███████╗ █████╗  ██████╗██╗  ██╗██╗  ██╗   ██████╗ ███████╗██╗   ██╗
