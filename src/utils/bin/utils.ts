@@ -44,8 +44,20 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
-  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
-
+  function CheckPassword(inputtxt) 
+  { 
+    var passw= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+      if(inputtxt.value.match(passw)) 
+    { 
+      alert('Correct, try another...')
+      return true;
+      }
+      else
+    { 
+      alert('Wrong...!')
+      return false;
+    }
+}
   return `Permission Denied: Unable to run the command '${args[0]}' as root.`;
 };
 
@@ -64,13 +76,13 @@ export const boot = async (args?: string[]): Promise<string> => {
   Welcome Agent.
   
   55 53 43 59 42 45 52 43 4F 4D
- 
+  `;
+  return `
   55 SC 59 42 45 52 43 4F 4D 20
 
   55 SC 59 42 E 52 43 4F 4D
-
-  55 SC 59 42 E 52 43 4F 4D
-
+  `;
+  return `
   55 SC 59 42 E 52 COM
 
   55 SC59 42 E 52COM
