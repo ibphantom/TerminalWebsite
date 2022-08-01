@@ -10,6 +10,10 @@ services:
     build: .
     container_name: TerminalWebsite
     restart: unless-stopped
+    environment:
+      - NEXT_PUBLIC_ENABLE_TRACKING=${ENABLE_TRACKING}
+      - NEXT_PUBLIC_TRACKING_URL=${TRACKING_URL}
+      - NEXT_PUBLIC_TRACKING_SITE_ID=${TRACKING_SITE_ID}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 200s
