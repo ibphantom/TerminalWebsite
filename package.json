@@ -1,44 +1,55 @@
 {
   "name": "terminal",
-  "version": "2.8.2",
+  "version": "2.13.1",
   "license": "MIT",
   "author": {
     "name": "Zach Koch",
     "url": "https://zachk.dev",
     "email": "admin@zachk.dev"
+    },
+  "funding": {
+    "type": "Paypal",
+    "url": "https://cash.app/$ZachRKoch"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibphantom/TerminalWebsite"
+   },
   "scripts": {
     "start": "next start",
     "build": "next build",
     "dev": "next dev",
     "next": "next",
+    "preexport": "next build",
+    "export": "next export",
     "lint": "eslint .",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@datapunt/matomo-tracker-react": "^0.5.1",
-    "axios": "^0.24.0",
-    "next": "^12.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "react-markdown": "^7.1.0"
+    "@m4tt72/matomo-tracker-react": "^0.6.2",
+    "axios": "^0.27.2",
+    "cowsay-browser": "^1.1.8",
+    "date-fns": "^2.28.0",
+    "next": "^12.2.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
-    "@types/node": "^17.0.14",
-    "@types/react": "^17.0.33",
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
-    "autoprefixer": "^10.4.0",
-    "eslint": "<8.0.0",
-    "eslint-config-next": "^12.0.3",
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.19.0",
+    "eslint-config-next": "^12.2.0",
     "eslint-plugin-next": "^0.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.27.0",
-    "husky": "^7.0.4",
-    "postcss": "^8.4.4",
-    "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.0",
-    "typescript": "^4.4.4"
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "husky": "^8.0.1",
+    "postcss": "^8.4.14",
+    "prettier": "^2.6.2",
+    "tailwindcss": "^3.1.4",
+    "typescript": "^4.7.2"
   }
 }
