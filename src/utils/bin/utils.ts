@@ -73,35 +73,13 @@ export const boot = async (args?: string[]): Promise<string> => {
   Compiling Kernel from encrypted source....
   Concatenating drive paths to home server....
   
-  Welcome Agent.
+  Welcome Agent. Your Code is:
   
-  55 53 43 59 42 45 52 43 4F 4D
-  `;
-  return `
-  55 SC 59 42 45 52 43 4F 4D 20
+  const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
 
-  55 SC 59 42 E 52 43 4F 4D
-  `;
-  return `
-  55 SC 59 42 E 52 COM
-
-  55 SC59 42 E 52COM
-
-  55 SC59 42 ERCOM
- 
-  USC59 B ERCOM
-
-  USCY B ERCOM
-
-  USCYBERCOM
-  
-╔╗─╔╗╔═══╗╔═══╗╔╗──╔╗╔══╗─╔═══╗╔═══╗╔═══╗╔═══╗╔═╗╔═╗
-║║─║║║╔═╗║║╔═╗║║╚╗╔╝║║╔╗║─║╔══╝║╔═╗║║╔═╗║║╔═╗║║║╚╝║║
-║║─║║║╚══╗║║─╚╝╚╗╚╝╔╝║╚╝╚╗║╚══╗║╚═╝║║║─╚╝║║─║║║╔╗╔╗║
-║║─║║╚══╗║║║─╔╗─╚╗╔╝─║╔═╗║║╔══╝║╔╗╔╝║║─╔╗║║─║║║║║║║║
-║╚═╝║║╚═╝║║╚═╝║──║║──║╚═╝║║╚══╗║║║╚╗║╚═╝║║╚═╝║║║║║║║
-╚═══╝╚═══╝╚═══╝──╚╝──╚═══╝╚═══╝╚╝╚═╝╚═══╝╚═══╝╚╝╚╝╚╝
-  
+  console.log(genRanHex(8));
+  console.log(genRanHex(8));
+  console.log(genRanHex(8));
   
   `;
 };
