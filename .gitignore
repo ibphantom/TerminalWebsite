@@ -38,3 +38,10 @@ jspm_packages
 .next
 
 .DS_Store
+
+.env
+
+bin/
+_static/
+
+.vscode/
