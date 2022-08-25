@@ -92,7 +92,7 @@ const getPlatform = (): 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' => 
   
   if (navigator.userAgent.indexOf('fedora') != -1) {
     os = 'Fedora';
-
+  }
   if (navigator.userAgent.indexOf('Linux') != -1) {
     os = 'Linux';
   }
