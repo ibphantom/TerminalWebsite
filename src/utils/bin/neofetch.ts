@@ -80,7 +80,7 @@ const fedora = `
 `;
 
 const getPlatform = (): 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' => {
-  let os: 'Unknown' | 'Fedora' | 'Windows' | 'MacOS' | 'Linux' = 'Unknown';
+  let os: 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' = 'Unknown';
 
   if (navigator.userAgent.indexOf('Win') != -1) {
     os = 'Windows';
