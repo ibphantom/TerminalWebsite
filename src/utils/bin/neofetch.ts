@@ -90,7 +90,7 @@ const getPlatform = (): 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' => 
     os = 'MacOS';
   }
   
-  if (navigator.userAgent.indexOf('Fedora') != -1) {
+  if (navigator.userAgent.indexOf('fedora') != -1) {
     os = 'Fedora';
 
   if (navigator.userAgent.indexOf('Linux') != -1) {
@@ -129,7 +129,7 @@ const getArt = () => {
     case 'Linux':
       return `<p style="color: ${mainColor}">${linux}</p>`;
     case 'Fedora':
-      return `<p style="color: ${mainColor}">${Fedora}</p>`;
+      return `<p style="color: ${mainColor}">${fedora}</p>`;
   }
 };
 
