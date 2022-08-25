@@ -79,8 +79,29 @@ const fedora = `
    '''''
 `;
 
-const getPlatform = (): 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' => {
-  let os: 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' = 'Unknown';
+const android = `
+         ';,.-----.,;'
+        ,'           ',
+       /    O     O    \\
+      |                 |
+      '-----------------'
+  ..  yyyyyyyyyyyyyyyyyyyy  ..
+.mMMm'MMMMMMMMMMMMMMMMMMMM'mMMm.
+:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
+:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
+:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
+:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
+-MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM-
+ +yy+ MMMMMMMMMMMMMMMMMMMM +yy+
+      mMMMMMMMMMMMMMMMMMMm
+      '/+'MMMMh''hMMMM+'/'
+          MMMMo  oMMMM
+          MMMMo  oMMMM
+          oNMm-  -mMNs
+`;
+
+const getPlatform = (): 'Android' | 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' => {
+  let os: 'Android' | 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' = 'Unknown';
 
   if (navigator.userAgent.indexOf('Win') != -1) {
     os = 'Windows';
@@ -90,9 +111,14 @@ const getPlatform = (): 'Fedora' | 'Unknown' | 'Windows' | 'MacOS' | 'Linux' => 
     os = 'MacOS';
   }
   
-  if (navigator.userAgent.indexOf('fedora') != -1) {
+  if (navigator.userAgent.indexOf('Fedora') != -1) {
     os = 'Fedora';
   }
+  
+  if (navigator.userAgent.indexOf("Android") != -1) {
+    os = "Android";
+  } 
+  
   if (navigator.userAgent.indexOf('Linux') != -1) {
     os = 'Linux';
   }
@@ -114,6 +140,8 @@ const getMainColor = () => {
       return theme.red;
     case 'Fedora':
        return theme.blue;
+    case 'Android':
+        return theme.green;
   }
 };
 
@@ -130,6 +158,8 @@ const getArt = () => {
       return `<p style="color: ${mainColor}">${linux}</p>`;
     case 'Fedora':
       return `<p style="color: ${mainColor}">${fedora}</p>`;
+    case 'Android':
+      return `<p style="color: ${mainColor}">${android}</p>`;
   }
 };
 
