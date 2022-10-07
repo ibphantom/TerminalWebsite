@@ -43,21 +43,11 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `really? emacs? you should be using 'nano'`;
 };
 
+export const Ruby = async (args?: string[]): Promise<string> => {
+  return `Hey, Ruby! I'm not the best coder... but I can make it work.`;
+};
+
 export const sudo = async (args?: string[]): Promise<string> => {
-  function CheckPassword(inputtxt) 
-  { 
-    var passw= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
-      if(inputtxt.value.match(passw)) 
-    { 
-      alert('Correct, try another...')
-      return true;
-      }
-      else
-    { 
-      alert('Wrong...!')
-      return false;
-    }
-}
   return `Permission Denied: Unable to run the command '${args[0]}' as root.`;
 };
 
