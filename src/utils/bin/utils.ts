@@ -43,7 +43,7 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `really? emacs? you should be using 'nano'`;
 };
 
-export const Ruby = async (args?: string[]): Promise<string> => {
+export const ruby = async (args?: string[]): Promise<string> => {
   return `Hey, Ruby! I'm not the best coder... but I can make it work.`;
 };
 
