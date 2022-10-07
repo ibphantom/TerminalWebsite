@@ -65,11 +65,11 @@ export const boot = async (args?: string[]): Promise<string> => {
   
   Welcome Agent. Your Code is:
   `;
-  const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+  //const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
 
-  console.log(genRanHex(8));
-  console.log(genRanHex(8));
-  console.log(genRanHex(8));
+  //console.log(genRanHex(8));
+  //console.log(genRanHex(8));
+  //console.log(genRanHex(8));
 };
 
 export const banner = (args?: string[]): string => {
