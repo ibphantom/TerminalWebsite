@@ -1,4 +1,4 @@
-export const randomnum = async (args: string[]): Promise<string> => {
+export const randomnum = async (args: number[]): Promise<number> => {
   const rndInt = randomIntFromInterval(99999, 1000000)
 
 function randomIntFromInterval(min, max) { // min and max included 
