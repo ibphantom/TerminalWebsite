@@ -65,11 +65,10 @@ export const boot = async (args?: string[]): Promise<string> => {
   
   Welcome Agent. Your Code is:
   `
+  ;
   function getRandomInt(max) {
   return Math.floor(Math.random(10000000) * max);
   }
-
-  console.log(getRandomInt(9999999));
 };
 
 export const banner = (args?: string[]): string => {
