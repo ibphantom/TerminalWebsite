@@ -64,7 +64,7 @@ export const boot = async (args?: string[]): Promise<string> => {
   Concatenating drive paths to home server....
   
   Welcome Agent. Your Code is:
-  `;
+  `
   function getRandomInt(max) {
   return Math.floor(Math.random(10000000) * max);
   }
