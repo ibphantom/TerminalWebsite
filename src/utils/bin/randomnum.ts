@@ -13,4 +13,4 @@ export const randomnum = async (args: string[]): Promise<string> => {
   }
   return random;
   }
-};
+}
