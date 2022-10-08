@@ -5,5 +5,5 @@ export const randomnum = async (args: string[]): Promise<string> => {
   return Math.floor(Math.random() * (max - min + 1) + min)
   
     }
-  console.log(rndInt);
+  return rndInt
 };
