@@ -1,9 +1,15 @@
 export const randomnum = async (args: string[]): Promise<string> => {
-  const rndInt = randomIntFromInterval(99999, 1000000);
-  
-  function randomIntFromInterval(min, max) { // min and max included 
-  return Math.floor(Math.random() * (max - min + 1) + min)
-  
+  function getRandomExcept(min, max, except) {
+  except.sort(function(a, b) {
+    return a - b;
+  });
+  var random = Math.floor(Math.random() * (max - min + 1 - except.length)) + min;
+  var i;
+  for (i = 0; i < except.length; i++) {
+    if (except[i] > random) {
+      break;
     }
-  return rndInt;
-};
+    random++;
+  }
+  return random;
+}
