@@ -44,10 +44,9 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const marilyn = async (args?: string[]): Promise<string> => {
-  return 'Hey, Marilyn! I love you so very much.';
-  wait 3
-  window.open('https://gui.zachk.dev/index2.html' , '_blank');
-  };
+  return `Hey, Marilyn! I love you so very much.`;
+  window.open('https://gui.zachk.dev/index2.html', '_blank');
+};
 
 export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission Denied: Unable to run the command '${args[0]}' as root.`;
