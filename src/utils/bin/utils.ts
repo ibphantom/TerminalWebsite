@@ -44,7 +44,17 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const marilyn = async (args?: string[]): Promise<string> => {
-  return `Hey, Marilyn! I love you so very much💞`;
+  return `Hey, Marilyn! I love you so very much💞
+    
+    Love is like the wild rose-briar,
+
+    Friendship is like the holly-tree —
+
+    The olly is dark when the rose-briar blooms 
+
+    But which will bloom more constantly?
+    "Love and Friendship" by Emily Bronte
+  `;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
