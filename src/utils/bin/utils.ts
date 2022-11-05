@@ -43,9 +43,9 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `really? emacs? you should be using 'nano'`;
 };
 
-//export const ruby = async (args?: string[]): Promise<string> => {
-  //return `Hey, Ruby! I'm not the best coder... but I can make it work.`;
-//};
+export const marilyn = async (args?: string[]): Promise<string> => {
+  return = `Hey, Marilyn! I love you so very much.               ,~./n              {;@;}/n        ,~.  ..±~± . *  ,~./n       {;@;}  . ,~. ** {;@;}/n     *..±~±  * {;@;} .  ±~±/n   ,~.   .. **  ±~±  ** . ,~./n  {;@;} * ,~.   * ... *  {;@;}/n   ±~± ..{;@;} **  ,~. .. ±~±/n    ,~. . ±~±. .. {;@;}   *..  */n   {;@;}  .. ,~. ..±~± **   ,~./n    ±~±. ** {;@;}  **   ** {;@;}/n      .. * . ±~±  ** ,~. ...±~±/n       * ~~  ** ... {;@;} ./n     .____  ~ *  ~   ±~±.~____./n      \ \ \\  | ||| |  / / / //n  ____ \___\\ || | || /,/___/ ____/n./___ \_____\\| |||||//______/ ___\./n \____/  ,___. | | | .___,   \____//n        /     \,--. /±__/ \/n       |     \_\   /_      |/n        \ ,--, /±_±\ \    //n         ±____/  /  \____±/n             /  /|\  \\,/n            (  (|||\  \ \/n            /\  \||\\  \ \/n            //\  \|\\)  )/n               )  ) \±±±/n              ±±±±   `;
+  };
 
 export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission Denied: Unable to run the command '${args[0]}' as root.`;
