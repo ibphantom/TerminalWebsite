@@ -44,7 +44,9 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const marilyn = async (args?: string[]): Promise<string> => {
-  return = `Hey, Marilyn! I love you so very much.               ,~./n              {;@;}/n        ,~.  ..±~± . *  ,~./n       {;@;}  . ,~. ** {;@;}/n     *..±~±  * {;@;} .  ±~±/n   ,~.   .. **  ±~±  ** . ,~./n  {;@;} * ,~.   * ... *  {;@;}/n   ±~± ..{;@;} **  ,~. .. ±~±/n    ,~. . ±~±. .. {;@;}   *..  */n   {;@;}  .. ,~. ..±~± **   ,~./n    ±~±. ** {;@;}  **   ** {;@;}/n      .. * . ±~±  ** ,~. ...±~±/n       * ~~  ** ... {;@;} ./n     .____  ~ *  ~   ±~±.~____./n      \ \ \\  | ||| |  / / / //n  ____ \___\\ || | || /,/___/ ____/n./___ \_____\\| |||||//______/ ___\./n \____/  ,___. | | | .___,   \____//n        /     \,--. /±__/ \/n       |     \_\   /_      |/n        \ ,--, /±_±\ \    //n         ±____/  /  \____±/n             /  /|\  \\,/n            (  (|||\  \ \/n            /\  \||\\  \ \/n            //\  \|\\)  )/n               )  ) \±±±/n              ±±±±   `;
+  return = `Hey, Marilyn! I love you so very much. 💞`;
+  wait 3
+  window.open('https://gui.zachk.dev/index2.html' , '_blank');
   };
 
 export const sudo = async (args?: string[]): Promise<string> => {
