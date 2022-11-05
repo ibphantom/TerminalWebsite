@@ -44,7 +44,10 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const marilyn = async (args?: string[]): Promise<string> => {
-  return `Hey, Marilyn! I love you so very much.`;
+  return `Hey, Marilyn! I love you so very much.💞`;
+};
+
+export const cutecouple = async (args?: string[]): Promise<string> => {
   window.open('https://gui.zachk.dev/index2.html', '_blank');
 };
 
