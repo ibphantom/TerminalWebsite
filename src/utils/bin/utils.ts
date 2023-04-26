@@ -43,7 +43,7 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `really? emacs? you should be using 'nano'`;
 };
 
-export const Jax = async (args?: string[]): Promise<string> => {
+export const jax = async (args?: string[]): Promise<string> => {
   return `Hey, Jax! I think you're awesome💞
     
       Love is like the wild rose-briar,
