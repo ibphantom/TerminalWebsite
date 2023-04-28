@@ -43,20 +43,20 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `really? emacs? you should be using 'nano'`;
 };
 
-export const jax = async (args?: string[]): Promise<string> => {
-  return `Hey, Jax! I think you're awesome💞
+// export const jax = async (args?: string[]): Promise<string> => {
+ // return `Hey, Jax! I think you're awesome💞
     
-      Love is like the wild rose-briar,
+   //   Love is like the wild rose-briar,
 
-      Friendship is like the holly-tree —
+     // Friendship is like the holly-tree —
 
-     The olly is dark when the rose-briar blooms 
+    // The olly is dark when the rose-briar blooms 
 
-      But which will bloom more constantly?
+     // But which will bloom more constantly?
    
-"Love and Friendship" by Emily Bronte
-  `;
-};
+// "Love and Friendship" by Emily Bronte
+ // `;
+// };
 
 export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission Denied: Unable to run the command '${args[0]}' as root.`;
