@@ -43,6 +43,35 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `really? emacs? you should be using 'nano'`;
 };
 
+export const jess = async (args?: string[]): Promise<string> => {
+ return `Hey, Jess! I think you're awesome
+    
+How rare in this world is true companionship found,
+So pure, so constant, and so profound!
+It's not in the beauty that fades with the day,
+Nor in the glittering jewels that pass away.
+
+True friends are like the stars that light up the night,
+Their bond is enduring, their loyalty bright.
+Like the faithful sun that warms the earth,
+Their friendship endures through death and birth.
+
+When sorrow and trials assail us each day,
+True friends stand by us, come what may.
+In joy or sadness, in success or strife,
+They are the sunshine that brightens our life.
+
+They never judge or criticize,
+But lift us up when we need to rise.
+They share our laughter, our tears, and our fears,
+And never leave us in times of despair.
+   
+"Friendship and Companionship" by ChatGPT(&Zach)
+  `;
+};
+
+
+
 // export const jax = async (args?: string[]): Promise<string> => {
  // return `Hey, Jax! I think you're awesome💞
     
