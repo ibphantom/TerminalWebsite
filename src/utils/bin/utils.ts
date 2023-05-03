@@ -43,8 +43,8 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `really? emacs? you should be using 'nano'`;
 };
 
-export const jess = async (args?: string[]): Promise<string> => {
- return `Hey, Jess! I think you're awesome
+export const lexi = async (args?: string[]): Promise<string> => {
+ return `Hey, Lexi! I think you're awesome
     
 How rare in this world is true companionship found,
 So pure, so constant, and so profound!
