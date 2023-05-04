@@ -44,7 +44,7 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const lexi = async (args?: string[]): Promise<string> => {
- return `Hey, Lexi! I think you're awesome
+ return `Hey, Lexi! You're awesome💫🌟
     
 In the vast expanse of the universe so grand,
 We wonder why we're here, what's our role in this land,
