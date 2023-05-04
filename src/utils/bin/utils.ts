@@ -46,25 +46,20 @@ export const emacs = async (args?: string[]): Promise<string> => {
 export const lexi = async (args?: string[]): Promise<string> => {
  return `Hey, Lexi! I think you're awesome
     
-How rare in this world is true companionship found,
-So pure, so constant, and so profound!
-It's not in the beauty that fades with the day,
-Nor in the glittering jewels that pass away.
+In the vast expanse of the universe so grand,
+We wonder why we're here, what's our role in this land,
+As we journey through life, seeking answers profound,
+We search for meaning, for purpose to be found.
 
-True friends are like the stars that light up the night,
-Their bond is enduring, their loyalty bright.
-Like the faithful sun that warms the earth,
-Their friendship endures through death and birth.
+In the depths of our souls, we seek connection true,
+A bond with another that feels pure and new,
+A friendship that's built on something that's special,
+A bond that's rooted deep, beyond the surface level.
 
-When sorrow and trials assail us each day,
-True friends stand by us, come what may.
-In joy or sadness, in success or strife,
-They are the sunshine that brightens our life.
-
-They never judge or criticize,
-But lift us up when we need to rise.
-They share our laughter, our tears, and our fears,
-And never leave us in times of despair.
+As we move into the maturity of our days,
+We seek a friendship that's built on more than just a phase.
+One that's rooted in something spiritual and true,
+Is a connection that will forever renew.
    
 "Friendship and Companionship" by ChatGPT(&Zach)
   `;
