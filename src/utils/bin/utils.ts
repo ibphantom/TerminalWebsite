@@ -46,22 +46,15 @@ export const emacs = async (args?: string[]): Promise<string> => {
 export const lexi = async (args?: string[]): Promise<string> => {
  return `Hey, Lexi! You're awesome💫🌟
     
-In the vast expanse of the universe so grand,
-We wonder why we're here, what's our role in this land,
-As we journey through life, seeking answers profound,
-We search for meaning, for purpose to be found.
+In a world of giants, petite and fine,
+A girl so cute, like stars that shine.
+Sweet and pretty, a sight to see,
+But more than that, a heart so free.
 
-In the depths of our souls, we seek connection true,
-A bond with another that feels pure and new,
-A friendship that's built on something that's special,
-A bond that's rooted deep, beyond the surface level.
-
-As we move into the maturity of our days,
-We seek a friendship that's built on more than just a phase.
-One that's rooted in something spiritual and true,
-Is a connection that will forever renew.
-   
-"Friendship and Companionship" by ChatGPT(&Zach)
+Her words like petals, soft and light,
+Keep conversations dancing through the night.
+Lovable aura, a magnetic grace,
+In her presence, all hearts embrace.
   `;
 };
 
