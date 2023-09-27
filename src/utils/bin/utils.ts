@@ -43,20 +43,11 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `really? emacs? you should be using 'nano'`;
 };
 
-export const Kim = async (args?: string[]): Promise<string> => {
- return `Hey, Kim! You're awesome💫🌟
+//export const Mom = async (args?: string[]): Promise<string> => {
+ //return `Hey, Mom! You're awesome💫🌟
     
-In a world of giants, petite and fine,
-A girl so cute, like stars that shine.
-Sweet and pretty, a sight to see,
-But more than that, a heart so free.
-
-Her words like petals, soft and light,
-Keep conversations dancing through the night.
-Lovable aura, a magnetic grace,
-In her presence, all hearts embrace.
-  `;
-};
+//  `;
+//};
 
 
 
