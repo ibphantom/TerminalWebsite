@@ -18,7 +18,7 @@ export const echo = async (args: string[]): Promise<string> => {
 };
 
 export const whoami = async (args: string[]): Promise<string> => {
-  return 'tester';
+  return 'A guest, a friend,.. someone who is very curious....?';
 };
 
 export const date = async (args: string[]): Promise<string> => {
