@@ -15,7 +15,7 @@ export const Ps1 = () => {
     <div>
       <span
         style={{
-          color: theme.garnet,
+          color: theme.red,
         }}
       >
         guest
