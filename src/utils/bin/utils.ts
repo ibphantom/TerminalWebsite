@@ -19,12 +19,6 @@ export const date = async (args: string[]): Promise<string> => {
   return new Date().toString();
 };
 
-export const gui = async (args: string[]): Promise<string> => {
-  window.open('https://gui.zachk.dev', '_blank');
-
-  return 'Opening GUI version...';
-};
-
 export const email = async (args: string[]): Promise<string> => {
   window.open('mailto:admin@zachk.dev');
 
@@ -93,7 +87,7 @@ export const boot = async (args?: string[]): Promise<string> => {
 };
 
 
-export const banner = (args?: string[]): string => { 
+export const banner = (args?: string[]): string => {
   return `
 ███████╗ █████╗  ██████╗██╗  ██╗██╗  ██╗   ██████╗ ███████╗██╗   ██╗
 ╚══███╔╝██╔══██╗██╔════╝██║  ██║██║ ██╔╝   ██╔══██╗██╔════╝██║   ██║
