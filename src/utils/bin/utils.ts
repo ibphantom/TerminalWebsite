@@ -83,14 +83,19 @@ export const repo = async (args?: string[]): Promise<string> => {
 };
 
 export const boot = async (args?: string[]): Promise<string> => {
+  let code;
+
+  (function() {
+    code = Math.floor(Math.random() * (1000 - 1 + 1)) + 1;
+  })();
+
   return `
   Attempting to boot..
   Compiling Kernel from encrypted source....
   Concatenating drive paths to home server....
-  
-  Welcome Agent. Your Code is:
+
+  Welcome Agent. Your Code is: ${code}
   `
-  ;
 };
 
 export const banner = (args?: string[]): string => {
