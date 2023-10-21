@@ -86,7 +86,7 @@ export const boot = async (args?: string[]): Promise<string> => {
   let code;
 
   (function() {
-    code = Math.floor(Math.random() * (1000 - 1 + 1)) + 1;
+    code = Math.floor(Math.random() * (1000000 - 1 + 1)) + 1;
   })();
 
   return `
@@ -97,6 +97,7 @@ export const boot = async (args?: string[]): Promise<string> => {
   Welcome Agent. Your Code is: ${code}
   `
 };
+
 
 export const banner = (args?: string[]): string => {
   return `
