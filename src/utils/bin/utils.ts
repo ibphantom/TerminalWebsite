@@ -99,15 +99,7 @@ export const boot = async (args?: string[]): Promise<string> => {
 };
 
 
-export const banner = (args?: string[]): string => {
-
-const clearScreen = () => {
-console.clear();
-};
-
-// Clear the screen.
-clearScreen();
- 
+export const banner = (args?: string[]): string => { 
   return `
 ███████╗ █████╗  ██████╗██╗  ██╗██╗  ██╗   ██████╗ ███████╗██╗   ██╗
 ╚══███╔╝██╔══██╗██╔════╝██║  ██║██║ ██╔╝   ██╔══██╗██╔════╝██║   ██║
