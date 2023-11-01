@@ -1,6 +1,13 @@
 import packageJson from '../../../package.json';
 import * as bin from './index';
 
+
+export const help = async (args: string[]): Promise<string> => {
+  const commands = Object.keys(bin).sort().join(', ');
+
+  return `Available commands:\n${commands}\n\n[tab]\t trigger completion.\n[ctrl+l] clear terminal.\n[ctrl+c] cancel command.`;
+};
+
 export const ls = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');
 
@@ -38,27 +45,11 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 //export const Mom = async (args?: string[]): Promise<string> => {
- //return `Hey, Mom! You're awesome💫🌟
+ 
+  //return `Hey, Mom! You're awesome💫🌟
     
 //  `;
 //};
-
-
-
-// export const jax = async (args?: string[]): Promise<string> => {
- // return `Hey, Jax! I think you're awesome💞
-    
-   //   Love is like the wild rose-briar,
-
-     // Friendship is like the holly-tree —
-
-    // The olly is dark when the rose-briar blooms 
-
-     // But which will bloom more constantly?
-   
-// "Love and Friendship" by Emily Bronte
- // `;
-// };
 
 export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission Denied: Unable to run the command '${args[0]}' as root.`;
