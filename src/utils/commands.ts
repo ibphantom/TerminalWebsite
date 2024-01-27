@@ -28,7 +28,6 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
       return 'Authentication failed. Permission denied.';
     }
   },
-};
 
   theme: (args: string[]) => {
     const usage = `Usage: theme [args].
@@ -74,27 +73,28 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
       }
     }
   },
-  repo; () => {
+
+  repo: () => {
     window.open(packageJson.repository.url, '_blank');
 
     return 'Opening repository...';
   },
-  clear; () => {
+  clear: () => {
     history.set([]);
 
     return '';
   },
-  email; () => {
+  email: () => {
     window.open(`mailto:${packageJson.author.email}`);
 
     return `Opening mailto:${packageJson.author.email}...`;
   },
-  donate; () => {
+  donate: () => {
     window.open(packageJson.funding.url, '_blank');
 
     return 'Opening donation url...';
   },
-  weather; async (args: string[]) => {
+  weather: async (args: string[]) => {
     const city = args.join('+');
 
     if (!city) {
@@ -105,10 +105,10 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 
     return weather.text();
   },
-  exit; () => {
+  exit: () => {
     return 'Please close the tab to exit.';
   },
-  curl; async (args: string[]) => {
+  curl: async (args: string[]) => {
     if (args.length === 0) {
       return 'curl: no URL provided';
     }
@@ -124,7 +124,7 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
       return `curl: could not fetch URL ${url}. Details: ${error}`;
     }
   },
-  banner; () => `
+  banner: () => `
 ███████╗ █████╗  ██████╗██╗  ██╗██╗  ██╗   ██████╗ ███████╗██╗   ██╗
 ╚══███╔╝██╔══██╗██╔════╝██║  ██║██║ ██╔╝   ██╔══██╗██╔════╝██║   ██║
   ███╔╝ ███████║██║     ███████║█████╔╝    ██║  ██║█████╗  ██║   ██║
@@ -133,4 +133,4 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 
 Type 'help' to see list of available commands.
 `,
-},
+};
