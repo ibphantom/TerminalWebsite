@@ -35,8 +35,8 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
   emacs: () => isAuthenticated ? `why use emacs? try 'vim'` : 'Authentication required',
   echo: (args: string[]) => isAuthenticated ? args.join(' ') : 'Authentication required',
   sudo: async (args: string[]) => {
-    // Simulate password prompt
-    const enteredPassword = prompt('Enter your password:');
+    // Simulate password prompt with masked input
+    const enteredPassword = prompt('Enter your password:', { type: 'password' });
 
     // Replace the condition with your actual password validation logic
     if (enteredPassword === 'DoubleDown!!') {
@@ -125,7 +125,11 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
     return weather.text();
   },
   exit: () => {
-    return 'Please close the tab to exit.';
+    isAuthenticated = false; // Reset authentication upon exit
+    if (window.confirm('Are you sure you want to exit?')) {
+      closeTabBasedOnOS(); // Close the tab if not authenticated
+    }
+    return 'Exiting...';
   },
   curl: async (args: string[]) => {
     if (args.length === 0) {
@@ -153,3 +157,14 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 Type 'help' to see list of available commands.
 `,
 };
+
+// Function to close the tab based on OS
+function closeTabBasedOnOS() {
+  if (navigator.userAgent.match(/(Chrome|Firefox)/)) {
+    window.close();
+  } else if (navigator.appVersion.indexOf('Mac') !== -1) {
+    // macOS-specific closing logic (e.g., using AppleScript)
+  } else {
+    // Other OS-specific closing logic
+  }
+}
