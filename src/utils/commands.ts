@@ -9,7 +9,26 @@ let isAuthenticated = false;
 export const commands: Record<string, (args: string[]) => Promise<string> | string> = {
   help: () => 'Available commands: ' + Object.keys(commands).join(', '),
   hostname: () => isAuthenticated ? hostname : 'Authentication required',
-  whoami: () => isAuthenticated ? 'guest' : 'Authentication required',
+
+  whoami: () => {
+    if (isAuthenticated) {
+      return 'SUDO';
+    } else {
+      const guestName = localStorage.getItem('guestName');
+      if (guestName) {
+        return guestName;
+      } else {
+        const enteredName = prompt('Yeah, who are you? Enter your name:');
+        if (enteredName) {
+          localStorage.setItem('guestName', enteredName);
+          return enteredName;
+        } else {
+          return 'Authentication required';
+        }
+      }
+    }
+  },
+
   date: () => isAuthenticated ? new Date().toLocaleString() : 'Authentication required',
   vi: () => isAuthenticated ? `why use vi? try 'emacs'` : 'Authentication required',
   vim: () => isAuthenticated ? `why use vim? try 'emacs'` : 'Authentication required',
