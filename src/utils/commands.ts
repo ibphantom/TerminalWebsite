@@ -2,6 +2,7 @@ import packageJson from '../../package.json';
 import themes from '../../themes.json';
 import { history } from '../stores/history';
 import { theme } from '../stores/theme';
+import { username } from '../stores/theme';
 
 const hostname = window.location.hostname;
 let isAuthenticated = false;
@@ -14,13 +15,15 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
     if (isAuthenticated) {
       return 'SUDO';
     } else {
-      const guestName = localStorage.getItem('guestName');
-      if (guestName) {
-        return guestName;
+      const storedUsername = localStorage.getItem('guestName');
+      if (storedUsername) {
+        username.set(storedUsername);
+        return storedUsername;
       } else {
         const enteredName = prompt('Yeah, who are you? Enter your name:');
         if (enteredName) {
           localStorage.setItem('guestName', enteredName);
+          username.set(enteredName);
           return enteredName;
         } else {
           return 'Authentication required';
@@ -47,6 +50,8 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
       return 'Authentication failed. Permission denied.';
     }
   },
+};
+
 
   theme: (args: string[]) => {
     const usage = `Usage: theme [args].
