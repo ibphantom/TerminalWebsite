@@ -4,21 +4,32 @@ import { history } from '../stores/history';
 import { theme } from '../stores/theme';
 
 const hostname = window.location.hostname;
+let isAuthenticated = false;
 
 export const commands: Record<string, (args: string[]) => Promise<string> | string> = {
   help: () => 'Available commands: ' + Object.keys(commands).join(', '),
-  hostname: () => hostname,
-  whoami: () => 'guest',
-  date: () => new Date().toLocaleString(),
-  vi: () => `why use vi? try 'emacs'`,
-  vim: () => `why use vim? try 'emacs'`,
-  emacs: () => `why use emacs? try 'vim'`,
-  echo: (args: string[]) => args.join(' '),
-  sudo: (args: string[]) => {
-    window.open('https://www.youtube.com/watch?v=sonKLFb_-d0');
+  hostname: () => isAuthenticated ? hostname : 'Authentication required',
+  whoami: () => isAuthenticated ? 'guest' : 'Authentication required',
+  date: () => isAuthenticated ? new Date().toLocaleString() : 'Authentication required',
+  vi: () => isAuthenticated ? `why use vi? try 'emacs'` : 'Authentication required',
+  vim: () => isAuthenticated ? `why use vim? try 'emacs'` : 'Authentication required',
+  emacs: () => isAuthenticated ? `why use emacs? try 'vim'` : 'Authentication required',
+  echo: (args: string[]) => isAuthenticated ? args.join(' ') : 'Authentication required',
+  sudo: async (args: string[]) => {
+    // Simulate password prompt
+    const enteredPassword = prompt('Enter your password:');
 
-    return `Permission denied: unable to run the command '${args[0]}' as root.`;
+    // Replace the condition with your actual password validation logic
+    if (enteredPassword === 'DoubleDown!!') {
+      isAuthenticated = true;
+      return `Authentication successful. You can now run '${args.join(' ')}' as root.`;
+    } else {
+      isAuthenticated = false;
+      return 'Authentication failed. Permission denied.';
+    }
   },
+};
+
   theme: (args: string[]) => {
     const usage = `Usage: theme [args].
     [args]:
