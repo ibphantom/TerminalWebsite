@@ -133,4 +133,4 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 
 Type 'help' to see list of available commands.
 `,
-};
+},
