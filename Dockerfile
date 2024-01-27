@@ -1,29 +1,16 @@
-FROM node:alpine AS deps
-RUN apk add --no-cache libc6-compat
-WORKDIR /deps
+FROM node:lts-alpine as dependencies
+WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-FROM node:alpine AS builder
-WORKDIR /build
-COPY . .
-COPY --from=deps /deps/node_modules ./node_modules
-RUN yarn build && yarn install --production --ignore-scripts --prefer-offline
-
-FROM node:alpine AS runner
+FROM node:lts-alpine as builder
 WORKDIR /app
+COPY . .
+COPY --from=dependencies /app/node_modules ./node_modules
+RUN yarn build
 
-ENV NODE_ENV production
-
-COPY --from=builder /build/public ./public
-COPY --from=builder /build/.next ./.next
-COPY --from=builder /build/node_modules ./node_modules
-COPY --from=builder /build/package.json ./package.json
-
-ENV PORT 3000
-
-ENV NEXT_TELEMETRY_DISABLED 1
-
+FROM lipanski/docker-static-website:latest
+COPY --from=builder /app/dist .
+COPY httpd.conf .
 EXPOSE 3000
-
-CMD ["node_modules/.bin/next", "start"]
+CMD ["/busybox", "httpd", "-f", "-v", "-p", "3000", "-c", "httpd.conf"]
