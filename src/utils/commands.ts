@@ -74,7 +74,7 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
       }
     }
   },
-  repo: () => {
+  repo; () => {
     window.open(packageJson.repository.url, '_blank');
 
     return 'Opening repository...';
