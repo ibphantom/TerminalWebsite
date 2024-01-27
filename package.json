@@ -1,5 +1,5 @@
 {
-  "name": "ZK Alpine Terminal",
+  "name": "terminal",
   "private": true,
   "version": "3.3.1",
   "type": "module",
