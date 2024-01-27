@@ -1,21 +1,21 @@
 {
-  "name": "terminal",
+  "name": "ZK Alpine Terminal",
   "private": true,
   "version": "3.3.1",
   "type": "module",
   "license": "MIT",
   "author": {
-    "name": "Yassine Fathi",
-    "url": "https://fathi.me",
-    "email": "yassine@fathi.me"
+    "name": "Zach Koch",
+    "url": "https://zachk.dev",
+    "email": "admin@zachk.dev"
   },
   "funding": {
-    "type": "Paypal",
-    "url": "https://paypal.me/yfthi"
+    "type": "Cashapp",
+    "url": "https://cash.app/$windsdark"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/m4tt72/terminal"
+    "url": "https://github.com/ibphantom/TerminalWebsite"
   },
   "scripts": {
     "dev": "vite",
