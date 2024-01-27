@@ -4,7 +4,7 @@
 </script>
 
 <h1 class="font-bold flex">
-  <span style={`color: ${$theme.yellow};`}>guest</span>
+  <span style={`color: ${$theme.yellow};`}>{guestName}</span>
   <span style={`color: ${$theme.white}`}>@</span>
   <span style={`color: ${$theme.green}`}>{hostname}</span>
   <span style={`color: ${$theme.white}`}>:~$</span>
