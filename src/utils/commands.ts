@@ -98,27 +98,27 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
     }
   },
 
-  repo: () => {
+  repo; () => {
     window.open(packageJson.repository.url, '_blank');
 
     return 'Opening repository...';
   },
-  clear: () => {
+  clear; () => {
     history.set([]);
 
     return '';
   },
-  email: () => {
+  email; () => {
     window.open(`mailto:${packageJson.author.email}`);
 
     return `Opening mailto:${packageJson.author.email}...`;
   },
-  donate: () => {
+  donate; () => {
     window.open(packageJson.funding.url, '_blank');
 
     return 'Opening donation url...';
   },
-  weather: async (args: string[]) => {
+  weather; async (args: string[]) => {
     const city = args.join('+');
 
     if (!city) {
@@ -129,14 +129,14 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 
     return weather.text();
   },
-  exit: () => {
+  exit; () => {
     isAuthenticated = false; // Reset authentication upon exit
     if (window.confirm('Are you sure you want to exit?')) {
       closeTabBasedOnOS(); // Close the tab if not authenticated
     }
     return 'Exiting...';
   },
-  curl: async (args: string[]) => {
+  curl; async (args: string[]) => {
     if (args.length === 0) {
       return 'curl: no URL provided';
     }
