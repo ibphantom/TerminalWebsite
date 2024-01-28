@@ -6,6 +6,7 @@
   // Subscribe to the username store
   let unsubscribe = username.subscribe(value => {
     $username = value;
+    console.log('Username updated:', value);
   });
 
   // Make sure to unsubscribe when the component is destroyed
