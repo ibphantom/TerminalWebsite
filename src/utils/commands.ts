@@ -5,21 +5,42 @@ import { theme } from '../stores/theme';
 
 const hostname = window.location.hostname;
 
+const checkSudo = () => {
+  // Implement the check for sudo privileges based on your application's authentication mechanism
+  // For demonstration purposes, this function always returns true
+  return true;
+};
+
+// Wrapper function to check for sudo
+const sudoWrapper = (cmd: (args: string[]) => Promise<string> | string) => {
+  return async (args: string[]) => {
+    const isSudo = args[0] === 'sudo';
+    if (isSudo) {
+      if (checkSudo()) {
+        return await cmd(args.slice(1)); // Execute the command without 'sudo'
+      } else {
+        return "Permission denied: You must be logged in as sudo to use this command.";
+      }
+    } else {
+      return await cmd(args); // Execute the command without 'sudo'
+    }
+  };
+};
+
 export const commands: Record<string, (args: string[]) => Promise<string> | string> = {
   help: () => 'Available commands: ' + Object.keys(commands).join(', '),
   hostname: () => hostname,
   whoami: () => 'guest',
-  date: () => new Date().toLocaleString(),
-  vi: () => `why use vi? try 'emacs'`,
-  vim: () => `why use vim? try 'emacs'`,
-  emacs: () => `why use emacs? try 'vim'`,
-  echo: (args: string[]) => args.join(' '),
-  sudo: (args: string[]) => {
+  date: sudoWrapper(async () => new Date().toLocaleString()),
+  vi: sudoWrapper(() => `why use vi? try 'emacs'`),
+  vim: sudoWrapper(() => `why use vim? try 'emacs'`),
+  emacs: sudoWrapper(() => `why use emacs? try 'vim'`),
+  echo: sudoWrapper((args: string[]) => args.join(' ')),
+  sudo: sudoWrapper((args: string[]) => {
     window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-
     return `Permission denied: unable to run the command '${args[0]}' as root.`;
-  },
-  theme: (args: string[]) => {
+  }),
+  theme: sudoWrapper((args: string[]) => {
     const usage = `Usage: theme [args].
     [args]:
       ls: list all available themes
@@ -62,58 +83,48 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
         return usage;
       }
     }
-  },
-  repo: () => {
+  }),
+  repo: sudoWrapper(() => {
     window.open(packageJson.repository.url, '_blank');
-
     return 'Opening repository...';
-  },
-  clear: () => {
+  }),
+  clear: sudoWrapper(() => {
     history.set([]);
-
     return '';
-  },
-  email: () => {
+  }),
+  email: sudoWrapper(() => {
     window.open(`mailto:${packageJson.author.email}`);
-
     return `Opening mailto:${packageJson.author.email}...`;
-  },
-  donate: () => {
+  }),
+  donate: sudoWrapper(() => {
     window.open(packageJson.funding.url, '_blank');
-
     return 'Opening donation url...';
-  },
-  weather: async (args: string[]) => {
+  }),
+  weather: sudoWrapper(async (args: string[]) => {
     const city = args.join('+');
-
     if (!city) {
       return 'Usage: weather [city]. Example: weather Brussels';
     }
-
     const weather = await fetch(`https://wttr.in/${city}?ATm`);
-
     return weather.text();
-  },
-  exit: () => {
+  }),
+  exit: sudoWrapper(() => {
     return 'Please close the tab to exit.';
-  },
-  curl: async (args: string[]) => {
+  }),
+  curl: sudoWrapper(async (args: string[]) => {
     if (args.length === 0) {
       return 'curl: no URL provided';
     }
-
     const url = args[0];
-
     try {
       const response = await fetch(url);
       const data = await response.text();
-
       return data;
     } catch (error) {
       return `curl: could not fetch URL ${url}. Details: ${error}`;
     }
-  },
-  banner: () => `
+  }),
+  banner: sudoWrapper(() => `
 ███████╗ █████╗  ██████╗██╗  ██╗██╗  ██╗   ██████╗ ███████╗██╗   ██╗
 ╚══███╔╝██╔══██╗██╔════╝██║  ██║██║ ██╔╝   ██╔══██╗██╔════╝██║   ██║
   ███╔╝ ███████║██║     ███████║█████╔╝    ██║  ██║█████╗  ██║   ██║
@@ -121,5 +132,5 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 ███████╗██║  ██║╚██████╗██║  ██║██║  ██╗██╗██████╔╝███████╗ ╚████╔╝ v${packageJson.version}
 
 Type 'help' to see list of available commands.
-`,
+`),
 };
