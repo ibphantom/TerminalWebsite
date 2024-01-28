@@ -9,26 +9,7 @@ let isAuthenticated = false;
 export const commands: Record<string, (args: string[]) => Promise<string> | string> = {
   help: () => 'Available commands: ' + Object.keys(commands).join(', '),
   hostname: () => isAuthenticated ? hostname : 'Authentication required',
-
-  whoami: () => {
-    if (isAuthenticated) {
-      return 'SUDO';
-    } else {
-      const guestName = localStorage.getItem('guestName');
-      if (guestName) {
-        return guestName;
-      } else {
-        const enteredName = prompt('Yeah, who are you? Enter your name:');
-        if (enteredName) {
-          localStorage.setItem('guestName', enteredName);
-          return enteredName;
-        } else {
-          return 'Authentication required';
-        }
-      }
-    }
-  },
-
+  whoami: () => isAuthenticated ? 'guest' : 'Authentication required',
   date: () => isAuthenticated ? new Date().toLocaleString() : 'Authentication required',
   vi: () => isAuthenticated ? `why use vi? try 'emacs'` : 'Authentication required',
   vim: () => isAuthenticated ? `why use vim? try 'emacs'` : 'Authentication required',
@@ -48,9 +29,7 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
     }
   },
 
-
-  
-  theme: sudoWrapper((args: string[]) => {
+  theme: (args: string[]) => {
     const usage = `Usage: theme [args].
     [args]:
       ls: list all available themes
@@ -93,48 +72,59 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
         return usage;
       }
     }
-  }),
-  repo: sudoWrapper(() => {
+  },
+
+  repo: () => {
     window.open(packageJson.repository.url, '_blank');
+
     return 'Opening repository...';
-  }),
-  clear: sudoWrapper(() => {
+  },
+  clear: () => {
     history.set([]);
+
     return '';
-  }),
-  email: sudoWrapper(() => {
+  },
+  email: () => {
     window.open(`mailto:${packageJson.author.email}`);
+
     return `Opening mailto:${packageJson.author.email}...`;
-  }),
-  donate: sudoWrapper(() => {
+  },
+  donate: () => {
     window.open(packageJson.funding.url, '_blank');
+
     return 'Opening donation url...';
-  }),
-  weather: sudoWrapper(async (args: string[]) => {
+  },
+  weather: async (args: string[]) => {
     const city = args.join('+');
+
     if (!city) {
-      return 'Usage: weather [city]. Example: weather Brussels';
+      return 'Usage: weather [city]. Example: weather Chicago';
     }
+
     const weather = await fetch(`https://wttr.in/${city}?ATm`);
+
     return weather.text();
-  }),
-  exit: sudoWrapper(() => {
+  },
+  exit: () => {
     return 'Please close the tab to exit.';
-  }),
-  curl: sudoWrapper(async (args: string[]) => {
+  },
+  curl: async (args: string[]) => {
     if (args.length === 0) {
       return 'curl: no URL provided';
     }
+
     const url = args[0];
+
     try {
       const response = await fetch(url);
       const data = await response.text();
+
       return data;
     } catch (error) {
       return `curl: could not fetch URL ${url}. Details: ${error}`;
     }
-  }),
-  banner: sudoWrapper(() => `
+  },
+  banner: () => `
 ███████╗ █████╗  ██████╗██╗  ██╗██╗  ██╗   ██████╗ ███████╗██╗   ██╗
 ╚══███╔╝██╔══██╗██╔════╝██║  ██║██║ ██╔╝   ██╔══██╗██╔════╝██║   ██║
   ███╔╝ ███████║██║     ███████║█████╔╝    ██║  ██║█████╗  ██║   ██║
@@ -142,5 +132,5 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 ███████╗██║  ██║╚██████╗██║  ██║██║  ██╗██╗██████╔╝███████╗ ╚████╔╝ v${packageJson.version}
 
 Type 'help' to see list of available commands.
-`),
+`,
 };
