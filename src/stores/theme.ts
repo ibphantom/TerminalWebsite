@@ -1,6 +1,6 @@
 <!-- TerminalWebsite/src/components/Ps1.svelte -->
 <script>
-  import { theme } from '../stores/theme';
+  import ( theme ) from '../stores/theme';
   let hostname = window.location.hostname;
 
   // Destructure the username store from the theme store
