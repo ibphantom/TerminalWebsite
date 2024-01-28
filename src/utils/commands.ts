@@ -4,42 +4,52 @@ import { history } from '../stores/history';
 import { theme } from '../stores/theme';
 
 const hostname = window.location.hostname;
-
-const checkSudo = () => {
-  // Implement the check for sudo privileges based on your application's authentication mechanism
-  // For demonstration purposes, this function always returns true
-  return true;
-};
-
-// Wrapper function to check for sudo
-const sudoWrapper = (cmd: (args: string[]) => Promise<string> | string) => {
-  return async (args: string[]) => {
-    const isSudo = args[0] === 'sudo';
-    if (isSudo) {
-      if (checkSudo()) {
-        return await cmd(args.slice(1)); // Execute the command without 'sudo'
-      } else {
-        return "Permission denied: You must be logged in as sudo to use this command.";
-      }
-    } else {
-      return await cmd(args); // Execute the command without 'sudo'
-    }
-  };
-};
+let isAuthenticated = false;
 
 export const commands: Record<string, (args: string[]) => Promise<string> | string> = {
   help: () => 'Available commands: ' + Object.keys(commands).join(', '),
-  hostname: () => hostname,
-  whoami: () => 'guest',
-  date: sudoWrapper(async () => new Date().toLocaleString()),
-  vi: sudoWrapper(() => `why use vi? try 'emacs'`),
-  vim: sudoWrapper(() => `why use vim? try 'emacs'`),
-  emacs: sudoWrapper(() => `why use emacs? try 'vim'`),
-  echo: sudoWrapper((args: string[]) => args.join(' ')),
-  sudo: sudoWrapper((args: string[]) => {
-    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-    return `Permission denied: unable to run the command '${args[0]}' as root.`;
-  }),
+  hostname: () => isAuthenticated ? hostname : 'Authentication required',
+
+  whoami: () => {
+    if (isAuthenticated) {
+      return 'SUDO';
+    } else {
+      const guestName = localStorage.getItem('guestName');
+      if (guestName) {
+        return guestName;
+      } else {
+        const enteredName = prompt('Yeah, who are you? Enter your name:');
+        if (enteredName) {
+          localStorage.setItem('guestName', enteredName);
+          return enteredName;
+        } else {
+          return 'Authentication required';
+        }
+      }
+    }
+  },
+
+  date: () => isAuthenticated ? new Date().toLocaleString() : 'Authentication required',
+  vi: () => isAuthenticated ? `why use vi? try 'emacs'` : 'Authentication required',
+  vim: () => isAuthenticated ? `why use vim? try 'emacs'` : 'Authentication required',
+  emacs: () => isAuthenticated ? `why use emacs? try 'vim'` : 'Authentication required',
+  echo: (args: string[]) => isAuthenticated ? args.join(' ') : 'Authentication required',
+  sudo: async (args: string[]) => {
+    // Simulate password prompt
+    const enteredPassword = prompt('Enter your password:');
+
+    // Replace the condition with your actual password validation logic
+    if (enteredPassword === 'DoubleDown!!') {
+      isAuthenticated = true;
+      return `Authentication successful. You can now run '${args.join(' ')}' as root.`;
+    } else {
+      isAuthenticated = false;
+      return 'Authentication failed. Permission denied.';
+    }
+  },
+
+
+  
   theme: sudoWrapper((args: string[]) => {
     const usage = `Usage: theme [args].
     [args]:
