@@ -161,7 +161,6 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 
 Type 'help' to see list of available commands.
 `,
-},
 
 // Function to close the tab based on OS
 function closeTabBasedOnOS() {
