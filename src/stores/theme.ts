@@ -1,18 +1,26 @@
-// src/stores/theme.ts
-import { writable } from 'svelte/store';
-import themes from '../../themes.json';
-import type { Theme } from '../interfaces/theme';
+<!-- TerminalWebsite/src/components/Ps1.svelte -->
+<script>
+  import { theme } from '../stores/theme';
+  let hostname = window.location.hostname;
 
-const defaultColorscheme: Theme = themes.find((t) => t.name === 'GruvboxDark')!;
+  // Destructure the username store from the theme store
+  let { subscribe, set } = theme;
+  let $username = ''; // Initialize $username with an empty string
 
-export const theme = writable<Theme>(
-  JSON.parse(
-    localStorage.getItem('colorscheme') || JSON.stringify(defaultColorscheme),
-  ),
-);
+  // Subscribe to the theme store and extract the username
+  let unsubscribe = subscribe(value => {
+    $username = value.username || ''; // Extract the username property from the theme
+  });
 
-export const username = writable<string>(''); // Add this line to export the username store
+  // Make sure to unsubscribe when the component is destroyed
+  onDestroy(() => {
+    unsubscribe();
+  });
+</script>
 
-theme.subscribe((value) => {
-  localStorage.setItem('colorscheme', JSON.stringify(value));
-});
+<h1 class="font-bold flex">
+  <span style={`color: ${$theme.yellow};`}>{$username}</span>
+  <span style={`color: ${$theme.white}`}>@</span>
+  <span style={`color: ${$theme.green}`}>{hostname}</span>
+  <span style={`color: ${$theme.white}`}>~$</span>
+</h1>
