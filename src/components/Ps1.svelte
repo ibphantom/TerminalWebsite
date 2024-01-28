@@ -1,4 +1,4 @@
-// TerminalWebsite/src/components/Ps1.svelte
+// src/components/Ps1.svelte
 <script>
   import { theme, username } from '../stores/theme';
   let hostname = window.location.hostname;
