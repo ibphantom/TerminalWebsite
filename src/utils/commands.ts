@@ -21,13 +21,15 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
 
     // Replace the condition with your actual password validation logic
     if (enteredPassword === 'DoubleDown!!') {
-      isAuthenticated = true;
-      return `Authentication successful. You can now run '${args.join(' ')}' as root.`;
+        isAuthenticated = true;
+        // Change whoami from guest to sudo
+        commands['whoami'] = () => isAuthenticated ? 'sudo' : 'Authentication required';
+        return `Authentication successful. You can now run '${args.join(' ')}' as root.`;
     } else {
-      isAuthenticated = false;
-      return 'Authentication failed. Permission denied.';
+        isAuthenticated = false;
+        return 'Authentication failed. Permission denied.';
     }
-  },
+},
 
   theme: (args: string[]) => {
     const usage = `Usage: theme [args].
